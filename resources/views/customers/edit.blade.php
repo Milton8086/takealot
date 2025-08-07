@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Customer</title>
+</head>
+<body>
+    <h1>Edit Customer</h1>
+
+    <form action="{{ route('customers.update', $customer->id) }}" method="POST">
+        @csrf
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ $customer->name }}" required> <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ $customer->email }}" required> <br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" value="{{ $customer->phone }}"> <br>
+
+        <button type="submit">Update Customer</button>
+    </form>
+
+    <p><a href="/customers">Back to Customer List</a></p>
+</body>
+</html>
