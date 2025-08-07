@@ -9,9 +9,10 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
+        //show the login page
         return view('users.login'); // login.blade.php
     }
-
+    // Handle user login
     public function login(Request $request)
     {
         $request->validate([
@@ -33,7 +34,7 @@ class LoginController extends Controller
         // Return back with error if login fails
         return back()->withErrors(['username' => 'Invalid credentials.']);
     }
-
+    // Handle user logout
     public function logout(Request $request)
     {
         Auth::logout();
