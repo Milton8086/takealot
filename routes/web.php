@@ -24,6 +24,7 @@ Route::get('/customers', [CustomerController::class, 'index'])->middleware('auth
 Route::get('/customers/{id}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
 Route::post('/customers/{id}/update', [CustomerController::class, 'update'])->name('customers.update');
 Route::post('/customers/{id}/delete', [CustomerController::class, 'destroy'])->name('customers.destroy');
+Route::get('/customers/create', [CustomerController::class, 'create'])->name('customers.create');
 
 
 

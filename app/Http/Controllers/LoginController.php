@@ -28,7 +28,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->route('customers.create');
+            return redirect()->route('customers.index');
         }
 
         // Return back with error if login fails
